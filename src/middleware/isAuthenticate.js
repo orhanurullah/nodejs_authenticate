@@ -8,7 +8,7 @@ const JWT = require('jsonwebtoken');
  * Sadece register ve login işlemleri öncesi kullanıcı olup olmadığının sorgusu için kullanılır.
  */
 
-const authenticated = async (req, res, next) => {
+const isAuthenticate = async (req, res, next) => {
     const token = req.headers.authorization?.split(" ")[1];
     if (token) {
         return res.status(500).json({
@@ -20,5 +20,5 @@ const authenticated = async (req, res, next) => {
 }
 
 module.exports = {
-    authenticated
+    isAuthenticate
 }

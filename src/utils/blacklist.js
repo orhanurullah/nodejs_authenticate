@@ -6,7 +6,11 @@ async function addTokenToBlackList(token){
 async function hasTheTokenInBlackList(token){
     return blackList.includes(token);
 }
+async function getTokenBlackList(){
+    return blackList;
+}
 module.exports = {
     addTokenToBlackList,
-    hasTheTokenInBlackList
+    hasTheTokenInBlackList,
+    getTokenBlackList
 };

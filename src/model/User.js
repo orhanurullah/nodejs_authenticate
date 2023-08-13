@@ -23,7 +23,7 @@ const UserSchema = new Schema({
     email: {
         type: String,
         required: [true, 'Lüften email adresinizi eksiksiz olarak girin'],
-        unique: [true, 'Email Tekrari'],
+        unique: true,
         maxLength: 255,
         minLength: 5
     },
