@@ -1,5 +1,6 @@
 const BaseLogger = require('../../logger/BaseLogger');
-const {addTokenToBlackList, hasTheTokenInBlackList} =  require('../../utils/blacklist');
+const {addTokenToBlackList} =  require('../../utils/blacklist');
+
 
 
 const Logout = async (req, res) => { 
@@ -7,7 +8,6 @@ const Logout = async (req, res) => {
     const logger = BaseLogger('info', 'user');
     const user = req.user;
     const token = req.headers.authorization?.split(" ")[1];
-    req.headers.authorization = null;
     await addTokenToBlackList(token);
 
 

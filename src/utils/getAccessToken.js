@@ -1,6 +1,7 @@
 
 const getAccessToken = async(req, res) => {
-    return await req.headers.authorization?.split(" ")[1];
+    const token = await req.headers.authorization?.split(" ")[1];
+    return token;
 }
 module.exports = {
     getAccessToken
